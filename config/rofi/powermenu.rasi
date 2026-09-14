@@ -1,75 +1,65 @@
 configuration {
-show-icons: false;
+    show-icons: false;
 }
 
-@import "~/.config/rofi/theme.rasi"
+* {
+    background-color: transparent;
+    text-color: #e0e0e0;
+    font: "JetBrainsMono Nerd Font 8";
+}
 
 window {
-transparency: "none";
-background-color: #111111;
-border: 1px;
-border-color: #333333;
-border-radius: 24px;
-width: 420px;
-location: center;
-anchor: center;
-x-offset: 0;
-y-offset: 0;
-padding: 24px;
+    transparency: "real";
+    background-color: #0e0e12f0;
+    border: 1px;
+    border-color: #2b2b36;
+    border-radius: 20px;
+    width: 480px;
+    location: center;
+    anchor: center;
+    padding: 16px;
 }
 
 mainbox {
-background-color: transparent;
-children: [ "message", "listview" ];
-spacing: 16px;
-}
-
-message {
-background-color: transparent;
-margin: 0px;
-}
-
-textbox {
-text-color: #ffffff;
-background-color: transparent;
-horizontal-align: 0.5;
-font: "JetBrainsMono Nerd Font 10";
+    background-color: transparent;
+    children: [ "listview" ];
+    spacing: 0px;
 }
 
 listview {
-background-color: transparent;
-columns: 3;
-lines: 2;
-spacing: 12px;
-cycle: true;
-dynamic: true;
-layout: vertical;
-reverse: false;
-fixed-height: true;
-fixed-columns: true;
-cursor: "default";
+    background-color: transparent;
+    columns: 3;
+    lines: 2;
+    spacing: 8px;
+    cycle: true;
+    dynamic: true;
+    layout: vertical;
+    fixed-height: true;
+    fixed-columns: true;
+    cursor: "default";
 }
 
 element {
-background-color: #1e1e22;
-border-radius: 16px;
-padding: 22px 0px;
-cursor: pointer;
-text-color: #ffffff;
+    background-color: #1a1a22;
+    text-color: #e0e0e0;
+    padding: 16px 8px;
+    cursor: pointer;
+    border-radius: 12px;
+    border: 1px;
+    border-color: #262632;
+    orientation: vertical;
 }
 
 element selected.normal {
-background-color: #3a3a42;
-border: 1px;
-border-color: #666675;
-text-color: #ffffff;
+    background-color: #2e2e3e;
+    border-color: #5c5c78;
+    text-color: #ffffff;
 }
 
 element-text {
-background-color: transparent;
-text-color: inherit;
-font: "JetBrainsMono Nerd Font 22";
-cursor: inherit;
-vertical-align: 0.5;
-horizontal-align: 0.5;
+    background-color: transparent;
+    text-color: inherit;
+    cursor: inherit;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
 }
