@@ -1,0 +1,17 @@
+/* User custom styles */
+/* Ensure workspace indicators are 1:1 ratio circles */
+#workspaces button {
+    min-width: 22px;
+    min-height: 22px;
+    padding: 0;
+    margin: 0 3px;
+    border-radius: 50%;
+}
+
+#workspaces button.active {
+    min-width: 22px;
+    min-height: 22px;
+    border-radius: 50%;
+    padding: 0;
+}
+
