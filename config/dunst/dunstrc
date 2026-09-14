@@ -1,49 +1,41 @@
 [global]
 monitor = 0
-follow = mouse
-width = (80, 260)
-height = (0, 80)
+follow = none
+width = 320
+height = 200
 origin = top-right
-offset = (14, 14)
+offset = 20x50
 scale = 0
-notification_limit = 4
+notification_limit = 5
 progress_bar = true
-progress_bar_height = 4
-progress_bar_frame_width = 1
-progress_bar_min_width = 120
-progress_bar_max_width = 240
-transparency = 0
-separator_height = 1
-padding = 6
-horizontal_padding = 8
-text_icon_padding = 6
-frame_width = 1
-frame_color = "#333333"
-gap_size = 4
-
-# Compact typography
-font = JetBrainsMono Nerd Font 8
-format = "<span size='small' weight='bold' foreground='#ffffff'>%s</span>\n<span size='smaller' foreground='#e0e0e0'>%b</span>"
-corner_radius = 6
-
+indicate_hidden = yes
+transparency = 10
+separator_height = 2
+padding = 12
+horizontal_padding = 14
+text_icon_padding = 10
+frame_width = 2
+frame_color = "#89b4fa"
+gap_size = 6
+font = JetBrainsMono Nerd Font 10
+line_height = 0
+format = "<b>%s</b>\n%b"
+corner_radius = 10
 mouse_left_click = close_current
-mouse_middle_click = do_action, close_current
 mouse_right_click = close_all
 
 [urgency_low]
-background = "#111111"
-foreground = "#e0e0e0"
-frame_color = "#222222"
-timeout = 3
-
-[urgency_normal]
-background = "#111111"
-foreground = "#ffffff"
-frame_color = "#333333"
+background = "#1e1e2e"
+foreground = "#cdd6f4"
 timeout = 5
 
+[urgency_normal]
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+timeout = 6
+
 [urgency_critical]
-background = "#111111"
-foreground = "#ffffff"
-frame_color = "#fb4934"
+background = "#1e1e2e"
+foreground = "#f38ba8"
+frame_color = "#f38ba8"
 timeout = 0
