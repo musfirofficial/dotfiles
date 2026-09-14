@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+lock=" Lock"
+suspend="󰒲 Suspend"
+logout="󰍃 Logout"
+shutdown="󰐥 Power Off"
+reboot="󰜉 Reboot"
+hibernate="󰋊 Hibernate"
+
+options="$lock\n$suspend\n$logout\n$shutdown\n$reboot\n$hibernate"
+
+chosen=$(echo -e "$options" | rofi -dmenu \
+-theme ~/.config/rofi/powermenu.rasi \
+-p "Session" \
+-me-select-entry '' \
+-me-accept-entry 'MousePrimary')
+
+case "$chosen" in
+"$lock")
+    pidof hyprlock || hyprlock
+    ;;
+"$suspend")
+    systemctl suspend
+    ;;
+"$logout")
+    killall -s SIGTERM Hyprland || pkill -KILL -u "$USER" -x Hyprland
+    ;;
+"$shutdown")
+    systemctl poweroff
+    ;;
+"$reboot")
+    systemctl reboot
+    ;;
+"$hibernate")
+    systemctl hibernate
+    ;;
+*)
+    exit 0
+    ;;
+esac
