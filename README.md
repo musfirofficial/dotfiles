@@ -1,4 +1,3 @@
-cat << 'EOF' > ~/dotfiles/README.md
 # Minimal Dark Hyprland Dotfiles
 
 A stripped-down, bloat-free configuration for Hyprland on Arch / CachyOS. It replaces bloated multi-theme switchers with a fixed, minimalist aesthetic: solid dark backgrounds (`#111111`), crisp white typography, small 8pt JetBrainsMono Nerd Font text, and compact layouts.
