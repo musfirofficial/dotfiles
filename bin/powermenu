@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+# Icons
+lock="󰌾"
+suspend="󰒲"
+logout="󰍃"
+shutdown="󰐥"
+reboot="󰜉"
+hibernate="󰋊"
+
+# Launch rofi with single-click enabled (MousePrimary = left click)
+chosen=$(printf "%s\n%s\n%s\n%s\n%s\n%s\n" "$lock" "$suspend" "$logout" "$shutdown" "$reboot" "$hibernate" | \
+rofi -dmenu \
+     -format i \
+     -theme ~/.config/rofi/powermenu.rasi \
+     -p "Session" \
+     -me-select-entry '' \
+     -me-accept-entry 'MousePrimary')
+
+# Strip any whitespace or line breaks
+chosen=$(echo "$chosen" | tr -d '[:space:]')
+
+# Exit if cancelled or clicked outside
+[ -z "$chosen" ] && exit 0
+
+case "$chosen" in
+0)
+    pidof hyprlock && exit 0
+    hyprlock || swaylock -f || loginctl lock-session
+    ;;
+1)
+    systemctl suspend
+    ;;
+2)
+    hyprctl dispatch exit
+    ;;
+3)
+    systemctl poweroff
+    ;;
+4)
+    systemctl reboot
+    ;;
+5)
+    systemctl hibernate
+    ;;
+*)
+    exit 0
+    ;;
+esac
